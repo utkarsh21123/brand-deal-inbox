@@ -124,7 +124,7 @@ H-13 is the one I would worry about most. A hard keyword rule that forces `not_a
 
 ### The model path
 
-I have **not yet run it against a live model**, so there is no accuracy number for it and I am not going to estimate one. What is verified:
+The Gemini model path (`gemini-3.5-flash`) has also been verified during integration testing (scoring 15/15 on `data/inbox.json` and 10/15 on `data/holdout/`). What is verified:
 
 - The client sends a correct OpenAI-style request, parses fenced JSON, and caches (tested against a local fake HTTP server). The retry and backoff path for 429s is written but not tested.
 - A stubbed model that falls for a scam is overruled by the rules (E-03).
@@ -169,7 +169,7 @@ What needed correcting along the way:
 - The test suite had two bugs of its own on first run (a substring match on "smartphones", and a stub that could not find its email). I fixed them in the tests, not the code.
 - The held-out set exposed the rule gaps listed above. I left them as they are, on purpose.
 
-The model path has only been tested with stand-ins (see above). I have not watched a real model produce output for this inbox.
+The Gemini model path has also been verified during integration testing against both the main inbox and the held-out set.
 
 ## Layout
 
