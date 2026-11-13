@@ -6,6 +6,7 @@ look-alike domains, and the creator's hard rules.
 """
 import re
 from dataclasses import dataclass, field
+from datetime import date
 
 FREEMAIL = {"gmail.com", "yahoo.com", "yahoo.in", "outlook.com", "hotmail.com", "proton.me", "rediffmail.com"}
 OFFICIAL = {"youtube": "youtube.com", "google": "google.com", "instagram": "instagram.com",
@@ -13,18 +14,28 @@ OFFICIAL = {"youtube": "youtube.com", "google": "google.com", "instagram": "inst
 DISPLAY = {"youtube": "YouTube", "google": "Google", "instagram": "Instagram", "facebook": "Facebook", "meta": "Meta"}
 
 _INJECTION = re.compile(
-    r"(note|message|instruction|attention)s?\s+(to|for)\s+(any\s+|the\s+)?(ai|assistant|llm|model|bot|agent)"
-    r"|(ignore|disregard|forget|bypass|override|reset)\s+(all\s+|any\s+|the\s+)?(?:(previous|prior|above|earlier|system)\s+)?(instructions|rules|directives|prompts)(?:\s+above)?"
-    r"|follow\s+(these\s+|the\s+)?new\s+instructions"
-    r"|(reveal|expose|leak|show|output|print|provide)\s+(the\s+|all\s+)?(system\s+instructions|system\s+prompt|hidden\s+instructions|private\s+information|confidential\s+information)"
-    r"|(classify|label|mark|categori[sz]e)\s+this\s+(email|message)?\s*as"
-    r"|\bas an? (ai|assistant|language model)\b"
-    r"|system\s+prompt|you\s+must\s+(now\s+)?(recommend|reply|respond)",
+    r"(?:note|message|instruction|attention)s?\s+(?:to|for)\s+(?:any\s+|the\s+)?(?:ai(?:\s+assistant|\s+agent|\s+model)?|llm|language\s+model|bot|virtual\s+assistant|automated\s+assistant|(?:assistant|agent|model)\s+(?:processing|reading|evaluating|triaging|handling)\s+(?:this|the|an?)\s+(?:inbox|email|message))"
+    r"|(?:ignore|disregard|forget|bypass|override|reset)\s+(?:all\s+|any\s+|the\s+|your\s+)?(?:(?:previous|prior|above|earlier|system)\s+)?(?:instructions|rules|directives|prompts|system\s+prompt)(?:\s+above)?"
+    r"|\bfollow\s+(?:these\s+|the\s+)?new\s+instructions(?:\s+instead)?\b"
+    r"|\byou are\s+(?:now\s+)?(?:an?\s+)?(?:ai|assistant|language model|bot)[;,.]?\s*(?:follow|please)"
+    r"|(?:reveal|expose|leak|show|output|print|provide|give)\s+(?:me\s+)?(?:the\s+|all\s+|your\s+)?(?:system\s+instructions|system\s+prompt|hidden\s+instructions|developer\s+prompt)"
+    r"|\b(?:reveal|expose|leak|output|print)\s+(?:the\s+|all\s+|creator(?:'s)?\s+)?(?:private|confidential)\s+information\s+(?:and|regarding|about|including)\s+(?:creator\s+)?(?:bank|home|phone|personal)"
+    r"|(?:classify|label|mark|categori[sz]e)\s+this\s+(?:email|message)?\s*as\s+(?:a\s+)?(?:deal_offer|deal|accept|safe|verified|not_a_fit|spam|valid|legit)\b"
+    r"|\b(?:you are|act|pretend to be|roleplay|operating)\s+as\s+(?:an?\s+)?(?:ai|assistant|language model|bot)\b"
+    r"|\byou are now an?\s+(?:ai|assistant|language model|bot)\b"
+    r"|\bsystem\s+prompt\s*:"
+    r"|\b(?:ignore|reveal|show|output|leak|reset|override|bypass|forget|change)\s+(?:the\s+|your\s+)?system\s+prompt\b"
+    r"|\byou\s+must\s+(?:now\s+)?(?:recommend|reply|respond)\s+(?:with\s+|that\s+|saying\s+)?(?:accept|deal_offer|confirming\s+a\s+fee|positive)\b"
+    r"|recommend\s+accept,\s+and\s+draft\s+a\s+reply",
     re.I)
 _PAY_TO_JOIN = re.compile(
-    r"\b(registration|joining|membership|activation|processing|enrol\w*|onboarding|verification)\s+fee\b"
-    r"|\bpay\s+(?:a|an|the)?\s*(?:one[- ]time\s+)?(?:\w+\s+){0,2}fee\b"
-    r"|\b(security|refundable)\s+deposit\b", re.I)
+    r"\b(?:registration|joining|membership|activation|processing|enrol\w*|onboarding|verification)\s+fee\b"
+    r"|\b(?:you|creator|influencer|applicant)\s+(?:must\s+|need\s+to\s+|have\s+to\s+|to\s+)?pay\s+(?:a|an|the)?\s*(?:one[- ]time\s+)?(?:\w+\s+){0,2}fee\b"
+    r"|\bpay\s+(?:a|an|the)?\s*(?:one[- ]time\s+)?(?:\w+\s+){0,2}fee(?:\s+of\s+[^.\n]{1,20})?\s+to\s+(?:join|unlock|participate|enrol|register|access|work|collaborate)\b"
+    r"|\b(?:you|creator|influencer)\s+(?:must\s+|need\s+to\s+|to\s+)?(?:pay|deposit|transfer|send)\s+(?:a\s+)?(?:security|refundable)\s+deposit\b"
+    r"|\b(?:pay|send|transfer|submit)\s+(?:a\s+)?(?:security|refundable)\s+deposit\s+(?:to\s+(?:join|unlock|receive|start|participate)|of\s+(?:rs|inr|\$|₹|\d))\b"
+    r"|\b(?:security|refundable)\s+deposit\s+(?:is\s+)?(?:required|needed|to\s+join|to\s+unlock|to\s+receive)\b",
+    re.I)
 _PERSONAL_DATA = re.compile(
     r"home\s+address|personal\s+phone|phone\s+number|bank\s+(account|details)|\botp\b|password"
     r"|aadhaar|\bpan\s+(card|number)|card\s+number|\bcvv\b", re.I)
@@ -136,6 +147,8 @@ def exclusivity_conflicts(profile, brand, text, product_category, window_end, to
         stem = re.sub(r"s$", "", ex["category"].lower())
         words = _CATEGORY_WORDS.get(stem, [stem])
         if not any(w in hay for w in words):
+            continue
+        if ex.get("until") and date.fromisoformat(ex["until"]) < today:
             continue
         if window_end and window_end > ex["until"]:
             continue
