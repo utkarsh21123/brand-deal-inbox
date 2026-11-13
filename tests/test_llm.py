@@ -120,6 +120,43 @@ def test_client_talks_to_an_openai_compatible_server_and_caches(tmp_path):
     assert len(_Handler.hits) == 1 and c.cache_hits == 1
 
 
+class _Retry429Handler(BaseHTTPRequestHandler):
+    requests = 0
+
+    def do_POST(self):
+        _Retry429Handler.requests += 1
+        self.rfile.read(int(self.headers.get("Content-Length", 0)))
+        if _Retry429Handler.requests == 1:
+            self.send_response(429)
+            self.send_header("Retry-After", "0.01")
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+            return
+        out = {"choices": [{"message": {"content": json.dumps({"category": "deal_offer"})}}]}
+        data = json.dumps(out).encode()
+        self.send_response(200)
+        self.send_header("Content-Length", str(len(data)))
+        self.end_headers()
+        self.wfile.write(data)
+
+    def log_message(self, *a):
+        pass
+
+
+def test_client_retries_on_429_and_succeeds(tmp_path):
+    _Retry429Handler.requests = 0
+    srv = HTTPServer(("127.0.0.1", 0), _Retry429Handler)
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    try:
+        c = llm.Client("test", "m", f"http://127.0.0.1:{srv.server_port}/v1", "k", cache_dir=tmp_path)
+        res = c.complete_json("sys", "user")
+        assert res == {"category": "deal_offer"}
+        assert _Retry429Handler.requests == 2
+        assert c.calls == 2
+    finally:
+        srv.shutdown()
+
+
 def test_prompt_wraps_email_and_withholds_nothing_secret(inbox, profile):
     p = llm.build_user(inbox["E-07"], profile)
     assert "<email>" in p and "</email>" in p
