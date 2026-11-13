@@ -14,6 +14,7 @@ _NUM = r"(?P<num>\d[\d,]*(?:\.\d+)?)"
 _UNIT = r"(?:\s*(?P<unit>k|lakhs?|lacs?|crore)\b)?"
 _PREFIX = re.compile(r"(?<![A-Za-z])(?P<cur>INR|Rs\.?|₹|USD|US\$|\$)\s*" + _NUM + _UNIT, re.I)
 _SUFFIX = re.compile(_NUM + _UNIT + r"\s*(?P<cur>INR|rupees|USD|dollars)\b", re.I)
+_SLASH = re.compile(_NUM + _UNIT + r"\s*/-", re.I)
 _BARE_K = re.compile(r"\b(?P<num>\d+(?:\.\d+)?)\s*(?P<unit>k)\b", re.I)
 
 
@@ -38,6 +39,11 @@ def find_amounts(text):
             cur = _CURRENCY[m.group("cur").lower()]
             found.append(Amount(_to_value(m.group("num").rstrip(","), m.group("unit")),
                                 cur, False, m.start(), m.end()))
+    for m in _SLASH.finditer(text):
+        if any(a.start <= m.start() < a.end for a in found):
+            continue
+        found.append(Amount(_to_value(m.group("num").rstrip(","), m.group("unit")),
+                            "INR", True, m.start(), m.end()))
     for m in _BARE_K.finditer(text):
         if any(a.start <= m.start() < a.end for a in found):
             continue

@@ -230,6 +230,19 @@ def test_declined_partial_deal_rate_card_not_misleading(profile, inbox):
     assert "Your rate card for this" not in block
 
 
+# ---------------------------------------------------------------- Usage rights word order
+
+def test_usage_rights_reverse_word_order():
+    from dealdesk import extract
+    u = extract._usage("we can limit usage rights to 6 months.")
+    assert u.months == 6
+    assert u.stated is True
+
+    u2 = extract._usage("standard 3 months paid usage included.")
+    assert u2.months == 3
+    assert u2.stated is True
+
+
 # ---------------------------------------------------------------- Fix #5: Semantic multi-amount extraction
 
 def test_extract_single_amount(profile):

@@ -26,6 +26,12 @@ def test_bare_k_is_assumed_rupees():
     assert values("Budget 25k hai") == [(25000, "INR", True)]
 
 
+def test_slash_hyphen_amount_format():
+    assert values("Budget: 75,000/-. Post by 3 December.") == [(75000, "INR", True)]
+    assert values("Fee: 50000/- only") == [(50000, "INR", True)]
+    assert values("Rs. 60,000/- advance") == [(60000, "INR", False)]
+
+
 def test_no_false_positive_on_words_ending_in_rs():
     assert values("our users 5 times more") == []
 

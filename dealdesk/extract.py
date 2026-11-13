@@ -15,7 +15,7 @@ _SHOUT = re.compile(r"\b(?:(?P<n>\d+|a|one)\s+)?(?:youtube\s+)?shout-?outs?\b", 
 _DEDICATED = re.compile(r"dedicated\s+(?:youtube\s+)?video", re.I)
 _INTEGRATION = re.compile(r"\b(?:(?P<n>\d+)\s+)?integrations?\b", re.I)
 
-_USAGE_MONTHS = re.compile(r"(\d+)\s*months?\b[^.]{0,25}?usage", re.I)
+_USAGE_MONTHS = re.compile(r"(?:(\d+)\s*months?\b[^.]{0,25}?usage|usage\b[^.]{0,25}?(\d+)\s*months?)", re.I)
 _PERPETUAL = re.compile(r"perpetual|in\s+perpetuity|forever|unlimited\s+usage", re.I)
 _WHITELIST = re.compile(r"whitelist|partnership\s+ads?|spark\s+ads?|dark\s+post", re.I)
 _ALL_MEDIA = re.compile(r"all\s+media|any\s+media|all\s+channels", re.I)
@@ -129,7 +129,7 @@ def _usage(text):
     u = Usage()
     m = _USAGE_MONTHS.search(text)
     if m:
-        u.months = int(m.group(1))
+        u.months = int(m.group(1) or m.group(2))
     u.perpetual = bool(_PERPETUAL.search(text))
     u.whitelisting = bool(_WHITELIST.search(text))
     u.all_media = bool(_ALL_MEDIA.search(text))
