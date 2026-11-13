@@ -7,7 +7,7 @@ It runs with no API key and no installed packages (Python 3.10+, standard librar
 ## Run it
 
 ```bash
-git clone <this repo> && cd brand-deal-inbox
+git clone https://github.com/utkarsh21123/brand-deal-inbox.git && cd brand-deal-inbox
 ```
 
 ### macOS / Linux
