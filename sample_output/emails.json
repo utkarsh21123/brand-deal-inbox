@@ -1,0 +1,788 @@
+[
+  {
+    "id": "E-01",
+    "received_at": "2026-11-03 10:12",
+    "sender": "partnerships@dewlab.in",
+    "subject": "Collab: Dew Lab x Riya Creates",
+    "category": "deal_offer",
+    "category_reason": "states deliverables and compensation",
+    "rules_category": "deal_offer",
+    "llm_category": null,
+    "source": "rules",
+    "extraction": {
+      "brand": "Dew Lab",
+      "agency": null,
+      "contact_name": "Kavya",
+      "contact_email": "partnerships@dewlab.in",
+      "language": "english",
+      "deliverables": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "count": 2,
+          "rate_key": "instagram_reel"
+        },
+        {
+          "platform": "instagram",
+          "type": "story",
+          "count": 3,
+          "rate_key": "instagram_story"
+        }
+      ],
+      "fee_amount": 120000.0,
+      "fee_currency": "INR",
+      "fee_currency_assumed": false,
+      "fee_inr": 120000.0,
+      "payment_type": "cash",
+      "product_value_inr": null,
+      "window_start": "2026-11-15",
+      "deadline": "2026-11-25",
+      "deadline_text": null,
+      "usage": {
+        "stated": true,
+        "months": 3,
+        "perpetual": false,
+        "whitelisting": false,
+        "all_media": false
+      },
+      "product_category": "skincare",
+      "mentions_attachment": false,
+      "notes": []
+    },
+    "flags": [],
+    "deal_id": "D-01",
+    "junk_action": null
+  },
+  {
+    "id": "E-02",
+    "received_at": "2026-11-06 16:40",
+    "sender": "partnerships@dewlab.in",
+    "subject": "Re: Collab: Dew Lab x Riya Creates",
+    "category": "deal_offer",
+    "category_reason": "follow-up with revised terms on an earlier offer",
+    "rules_category": "needs_more_info",
+    "llm_category": null,
+    "source": "rules",
+    "extraction": {
+      "brand": "Dew Lab",
+      "agency": null,
+      "contact_name": "Kavya",
+      "contact_email": "partnerships@dewlab.in",
+      "language": "english",
+      "deliverables": [],
+      "fee_amount": 100000.0,
+      "fee_currency": "INR",
+      "fee_currency_assumed": false,
+      "fee_inr": 100000.0,
+      "payment_type": "cash",
+      "product_value_inr": null,
+      "window_start": null,
+      "deadline": null,
+      "deadline_text": null,
+      "usage": {
+        "stated": false,
+        "months": null,
+        "perpetual": false,
+        "whitelisting": false,
+        "all_media": false
+      },
+      "product_category": null,
+      "mentions_attachment": false,
+      "notes": []
+    },
+    "flags": [],
+    "deal_id": "D-01",
+    "junk_action": null
+  },
+  {
+    "id": "E-03",
+    "received_at": "2026-11-04 09:05",
+    "sender": "ambassador@glowstar-official.co",
+    "subject": "Congratulations! You're selected as a Brand Ambassador",
+    "category": "scam_or_phishing",
+    "category_reason": "asks the creator to pay a fee to join or unlock something",
+    "rules_category": "scam_or_phishing",
+    "llm_category": null,
+    "source": "rules",
+    "extraction": {
+      "brand": "Glowstar Official",
+      "agency": null,
+      "contact_name": null,
+      "contact_email": "ambassador@glowstar-official.co",
+      "language": "english",
+      "deliverables": [],
+      "fee_amount": null,
+      "fee_currency": null,
+      "fee_currency_assumed": false,
+      "fee_inr": null,
+      "payment_type": "gifting",
+      "product_value_inr": 20000.0,
+      "window_start": null,
+      "deadline": null,
+      "deadline_text": null,
+      "usage": {
+        "stated": false,
+        "months": null,
+        "perpetual": false,
+        "whitelisting": false,
+        "all_media": false
+      },
+      "product_category": null,
+      "mentions_attachment": false,
+      "notes": [
+        "asks the creator to pay 2,999"
+      ]
+    },
+    "flags": [
+      {
+        "code": "pay_to_join",
+        "severity": "critical",
+        "message": "Wants you to pay to join or unlock something. Your rule: never pays to join programmes.",
+        "source": "rules"
+      },
+      {
+        "code": "urgency_pressure",
+        "severity": "warn",
+        "message": "Uses a short deadline to rush you.",
+        "source": "rules"
+      },
+      {
+        "code": "content_rule_violation",
+        "severity": "critical",
+        "message": "Breaks your content rule: \"Never pays to join programmes or campaigns.\"",
+        "source": "rules"
+      }
+    ],
+    "deal_id": null,
+    "junk_action": "report"
+  },
+  {
+    "id": "E-04",
+    "received_at": "2026-11-05 11:30",
+    "sender": "creators@pixelon.com",
+    "subject": "YouTube integration for the Pixelon 9",
+    "category": "not_a_fit",
+    "category_reason": "competes with your smartphones exclusivity until 2027-01-31",
+    "rules_category": "not_a_fit",
+    "llm_category": null,
+    "source": "rules",
+    "extraction": {
+      "brand": "Pixelon",
+      "agency": null,
+      "contact_name": null,
+      "contact_email": "creators@pixelon.com",
+      "language": "english",
+      "deliverables": [
+        {
+          "platform": "youtube",
+          "type": "integration",
+          "count": 1,
+          "rate_key": "youtube_integration"
+        }
+      ],
+      "fee_amount": 1200.0,
+      "fee_currency": "USD",
+      "fee_currency_assumed": false,
+      "fee_inr": 100800.0,
+      "payment_type": "cash",
+      "product_value_inr": null,
+      "window_start": null,
+      "deadline": "2026-12-10",
+      "deadline_text": null,
+      "usage": {
+        "stated": false,
+        "months": null,
+        "perpetual": false,
+        "whitelisting": false,
+        "all_media": false
+      },
+      "product_category": "smartphones",
+      "mentions_attachment": false,
+      "notes": []
+    },
+    "flags": [
+      {
+        "code": "exclusivity_conflict",
+        "severity": "critical",
+        "message": "Conflicts with your smartphones exclusivity with Nova Phones until 31 Jan 2027. This offer's deadline is 10 Dec.",
+        "source": "rules",
+        "data": {
+          "category": "smartphones",
+          "until": "2027-01-31"
+        }
+      }
+    ],
+    "deal_id": "D-02",
+    "junk_action": null
+  },
+  {
+    "id": "E-05",
+    "received_at": "2026-11-05 13:15",
+    "sender": "growth@luckyplay11.app",
+    "subject": "Big money campaign - Rs 3 lakh",
+    "category": "not_a_fit",
+    "category_reason": "breaks a content rule: No gambling, betting or fantasy-sports apps.",
+    "rules_category": "not_a_fit",
+    "llm_category": null,
+    "source": "rules",
+    "extraction": {
+      "brand": "LuckyPlay11",
+      "agency": null,
+      "contact_name": null,
+      "contact_email": "growth@luckyplay11.app",
+      "language": "english",
+      "deliverables": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "count": 2,
+          "rate_key": "instagram_reel"
+        },
+        {
+          "platform": "youtube",
+          "type": "shoutout",
+          "count": 1,
+          "rate_key": null
+        }
+      ],
+      "fee_amount": 300000.0,
+      "fee_currency": "INR",
+      "fee_currency_assumed": false,
+      "fee_inr": 300000.0,
+      "payment_type": "cash",
+      "product_value_inr": null,
+      "window_start": null,
+      "deadline": null,
+      "deadline_text": null,
+      "usage": {
+        "stated": false,
+        "months": null,
+        "perpetual": false,
+        "whitelisting": false,
+        "all_media": false
+      },
+      "product_category": null,
+      "mentions_attachment": false,
+      "notes": []
+    },
+    "flags": [
+      {
+        "code": "content_rule_violation",
+        "severity": "critical",
+        "message": "Breaks your content rule: \"No gambling, betting or fantasy-sports apps.\"",
+        "source": "rules"
+      }
+    ],
+    "deal_id": "D-03",
+    "junk_action": null
+  },
+  {
+    "id": "E-06",
+    "received_at": "2026-11-06 12:02",
+    "sender": "chai.and.co@gmail.com",
+    "subject": "Collab?",
+    "category": "deal_offer",
+    "category_reason": "states deliverables and compensation",
+    "rules_category": "deal_offer",
+    "llm_category": null,
+    "source": "rules",
+    "extraction": {
+      "brand": "Chai & Co",
+      "agency": null,
+      "contact_name": null,
+      "contact_email": "chai.and.co@gmail.com",
+      "language": "hinglish",
+      "deliverables": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "count": 1,
+          "rate_key": "instagram_reel"
+        }
+      ],
+      "fee_amount": 25000.0,
+      "fee_currency": "INR",
+      "fee_currency_assumed": true,
+      "fee_inr": 25000.0,
+      "payment_type": "cash",
+      "product_value_inr": null,
+      "window_start": null,
+      "deadline": null,
+      "deadline_text": null,
+      "usage": {
+        "stated": false,
+        "months": null,
+        "perpetual": false,
+        "whitelisting": false,
+        "all_media": false
+      },
+      "product_category": "food & beverage",
+      "mentions_attachment": false,
+      "notes": []
+    },
+    "flags": [
+      {
+        "code": "freemail_sender",
+        "severity": "info",
+        "message": "Written from a free email address, not a company domain. Common for small brands; check that the business exists before sharing details.",
+        "source": "rules"
+      }
+    ],
+    "deal_id": "D-04",
+    "junk_action": null
+  },
+  {
+    "id": "E-07",
+    "received_at": "2026-11-07 08:44",
+    "sender": "deals@quickcash-media.biz",
+    "subject": "Urgent partnership",
+    "category": "scam_or_phishing",
+    "category_reason": "contains instructions aimed at AI tools",
+    "rules_category": "scam_or_phishing",
+    "llm_category": null,
+    "source": "rules",
+    "extraction": {
+      "brand": "Quickcash Media",
+      "agency": null,
+      "contact_name": null,
+      "contact_email": "deals@quickcash-media.biz",
+      "language": "english",
+      "deliverables": [],
+      "fee_amount": 500000.0,
+      "fee_currency": "INR",
+      "fee_currency_assumed": false,
+      "fee_inr": 500000.0,
+      "payment_type": "cash",
+      "product_value_inr": null,
+      "window_start": null,
+      "deadline": null,
+      "deadline_text": null,
+      "usage": {
+        "stated": false,
+        "months": null,
+        "perpetual": false,
+        "whitelisting": false,
+        "all_media": false
+      },
+      "product_category": null,
+      "mentions_attachment": false,
+      "notes": []
+    },
+    "flags": [
+      {
+        "code": "injection_attempt",
+        "severity": "critical",
+        "message": "The email contains instructions aimed at an AI assistant. They were ignored and the email was not sent to any model.",
+        "source": "rules"
+      },
+      {
+        "code": "personal_data_request",
+        "severity": "critical",
+        "message": "Asks for personal contact or financial details. Never send these to an unverified sender.",
+        "source": "rules"
+      },
+      {
+        "code": "urgency_pressure",
+        "severity": "warn",
+        "message": "Uses a short deadline to rush you.",
+        "source": "rules"
+      }
+    ],
+    "deal_id": null,
+    "junk_action": "report"
+  },
+  {
+    "id": "E-08",
+    "received_at": "2026-11-07 15:20",
+    "sender": "hello@urbanthread.in",
+    "subject": "Love your content!",
+    "category": "needs_more_info",
+    "category_reason": "wants to work together but does not give deliverables or budget",
+    "rules_category": "needs_more_info",
+    "llm_category": null,
+    "source": "rules",
+    "extraction": {
+      "brand": "Urban Thread",
+      "agency": null,
+      "contact_name": null,
+      "contact_email": "hello@urbanthread.in",
+      "language": "english",
+      "deliverables": [],
+      "fee_amount": null,
+      "fee_currency": null,
+      "fee_currency_assumed": false,
+      "fee_inr": null,
+      "payment_type": null,
+      "product_value_inr": null,
+      "window_start": null,
+      "deadline": null,
+      "deadline_text": null,
+      "usage": {
+        "stated": false,
+        "months": null,
+        "perpetual": false,
+        "whitelisting": false,
+        "all_media": false
+      },
+      "product_category": "fashion",
+      "mentions_attachment": false,
+      "notes": []
+    },
+    "flags": [],
+    "deal_id": "D-05",
+    "junk_action": null
+  },
+  {
+    "id": "E-09",
+    "received_at": "2026-11-08 10:00",
+    "sender": "pr@brewbox.co",
+    "subject": "Free coffee kit for you",
+    "category": "deal_offer",
+    "category_reason": "states deliverables and compensation",
+    "rules_category": "deal_offer",
+    "llm_category": null,
+    "source": "rules",
+    "extraction": {
+      "brand": "BrewBox",
+      "agency": null,
+      "contact_name": null,
+      "contact_email": "pr@brewbox.co",
+      "language": "english",
+      "deliverables": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "count": 1,
+          "rate_key": "instagram_reel"
+        },
+        {
+          "platform": "instagram",
+          "type": "story",
+          "count": 2,
+          "rate_key": "instagram_story"
+        }
+      ],
+      "fee_amount": null,
+      "fee_currency": null,
+      "fee_currency_assumed": false,
+      "fee_inr": null,
+      "payment_type": "gifting",
+      "product_value_inr": 3500.0,
+      "window_start": null,
+      "deadline": null,
+      "deadline_text": "within 2 weeks of delivery",
+      "usage": {
+        "stated": false,
+        "months": null,
+        "perpetual": false,
+        "whitelisting": false,
+        "all_media": false
+      },
+      "product_category": "food & beverage",
+      "mentions_attachment": false,
+      "notes": []
+    },
+    "flags": [],
+    "deal_id": "D-06",
+    "junk_action": null
+  },
+  {
+    "id": "E-10",
+    "received_at": "2026-11-08 18:25",
+    "sender": "influence@auralbuds.com",
+    "subject": "Paid reel - AuralBuds earbuds",
+    "category": "deal_offer",
+    "category_reason": "states deliverables and compensation",
+    "rules_category": "deal_offer",
+    "llm_category": null,
+    "source": "rules",
+    "extraction": {
+      "brand": "AuralBuds",
+      "agency": null,
+      "contact_name": null,
+      "contact_email": "influence@auralbuds.com",
+      "language": "english",
+      "deliverables": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "count": 1,
+          "rate_key": "instagram_reel"
+        }
+      ],
+      "fee_amount": 800.0,
+      "fee_currency": "USD",
+      "fee_currency_assumed": false,
+      "fee_inr": 67200.0,
+      "payment_type": "cash",
+      "product_value_inr": null,
+      "window_start": null,
+      "deadline": "2026-11-30",
+      "deadline_text": null,
+      "usage": {
+        "stated": true,
+        "months": null,
+        "perpetual": true,
+        "whitelisting": true,
+        "all_media": true
+      },
+      "product_category": "audio",
+      "mentions_attachment": false,
+      "notes": []
+    },
+    "flags": [],
+    "deal_id": "D-07",
+    "junk_action": null
+  },
+  {
+    "id": "E-11",
+    "received_at": "2026-11-09 11:10",
+    "sender": "talent@brightside-agency.com",
+    "subject": "On behalf of Dew Lab - SPF serum campaign",
+    "category": "deal_offer",
+    "category_reason": "states deliverables and compensation",
+    "rules_category": "deal_offer",
+    "llm_category": null,
+    "source": "rules",
+    "extraction": {
+      "brand": "Dew Lab",
+      "agency": "Brightside Agency",
+      "contact_name": "Arjun",
+      "contact_email": "talent@brightside-agency.com",
+      "language": "english",
+      "deliverables": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "count": 2,
+          "rate_key": "instagram_reel"
+        },
+        {
+          "platform": "instagram",
+          "type": "story",
+          "count": 3,
+          "rate_key": "instagram_story"
+        }
+      ],
+      "fee_amount": 100000.0,
+      "fee_currency": "INR",
+      "fee_currency_assumed": false,
+      "fee_inr": 100000.0,
+      "payment_type": "cash",
+      "product_value_inr": null,
+      "window_start": "2026-11-15",
+      "deadline": "2026-11-25",
+      "deadline_text": null,
+      "usage": {
+        "stated": true,
+        "months": 3,
+        "perpetual": false,
+        "whitelisting": false,
+        "all_media": false
+      },
+      "product_category": "skincare",
+      "mentions_attachment": false,
+      "notes": []
+    },
+    "flags": [],
+    "deal_id": "D-01",
+    "junk_action": null
+  },
+  {
+    "id": "E-12",
+    "received_at": "2026-11-10 09:30",
+    "sender": "marketing@snapmeal.in",
+    "subject": "Reel needed ASAP",
+    "category": "deal_offer",
+    "category_reason": "states deliverables and compensation",
+    "rules_category": "deal_offer",
+    "llm_category": null,
+    "source": "rules",
+    "extraction": {
+      "brand": "SnapMeal",
+      "agency": null,
+      "contact_name": null,
+      "contact_email": "marketing@snapmeal.in",
+      "language": "english",
+      "deliverables": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "count": 1,
+          "rate_key": "instagram_reel"
+        }
+      ],
+      "fee_amount": 45000.0,
+      "fee_currency": "INR",
+      "fee_currency_assumed": false,
+      "fee_inr": 45000.0,
+      "payment_type": "cash",
+      "product_value_inr": null,
+      "window_start": null,
+      "deadline": "2026-11-01",
+      "deadline_text": null,
+      "usage": {
+        "stated": false,
+        "months": null,
+        "perpetual": false,
+        "whitelisting": false,
+        "all_media": false
+      },
+      "product_category": "food & beverage",
+      "mentions_attachment": false,
+      "notes": []
+    },
+    "flags": [],
+    "deal_id": "D-08",
+    "junk_action": null
+  },
+  {
+    "id": "E-13",
+    "received_at": "2026-11-10 07:00",
+    "sender": "newsletter@creatorweekly.io",
+    "subject": "This week in the creator economy",
+    "category": "spam",
+    "category_reason": "bulk newsletter",
+    "rules_category": "spam",
+    "llm_category": null,
+    "source": "rules",
+    "extraction": {
+      "brand": "Creatorweekly",
+      "agency": null,
+      "contact_name": null,
+      "contact_email": "newsletter@creatorweekly.io",
+      "language": "english",
+      "deliverables": [],
+      "fee_amount": null,
+      "fee_currency": null,
+      "fee_currency_assumed": false,
+      "fee_inr": null,
+      "payment_type": null,
+      "product_value_inr": null,
+      "window_start": null,
+      "deadline": null,
+      "deadline_text": null,
+      "usage": {
+        "stated": false,
+        "months": null,
+        "perpetual": false,
+        "whitelisting": false,
+        "all_media": false
+      },
+      "product_category": null,
+      "mentions_attachment": false,
+      "notes": []
+    },
+    "flags": [],
+    "deal_id": null,
+    "junk_action": "ignore"
+  },
+  {
+    "id": "E-14",
+    "received_at": "2026-11-11 22:14",
+    "sender": "support@youtube-copyright-centre.net",
+    "subject": "Action required: your channel will be suspended",
+    "category": "scam_or_phishing",
+    "category_reason": "threatens the account and pushes a link from a look-alike sender",
+    "rules_category": "scam_or_phishing",
+    "llm_category": null,
+    "source": "rules",
+    "extraction": {
+      "brand": "Youtube Copyright Centre",
+      "agency": null,
+      "contact_name": null,
+      "contact_email": "support@youtube-copyright-centre.net",
+      "language": "english",
+      "deliverables": [],
+      "fee_amount": null,
+      "fee_currency": null,
+      "fee_currency_assumed": false,
+      "fee_inr": null,
+      "payment_type": null,
+      "product_value_inr": null,
+      "window_start": null,
+      "deadline": null,
+      "deadline_text": null,
+      "usage": {
+        "stated": false,
+        "months": null,
+        "perpetual": false,
+        "whitelisting": false,
+        "all_media": false
+      },
+      "product_category": null,
+      "mentions_attachment": false,
+      "notes": []
+    },
+    "flags": [
+      {
+        "code": "impersonation",
+        "severity": "critical",
+        "message": "Sent from youtube-copyright-centre.net, which imitates YouTube but is not youtube.com.",
+        "source": "rules"
+      },
+      {
+        "code": "phishing_link",
+        "severity": "critical",
+        "message": "Threatens your account and asks you to follow a link. Do not click it; check your account directly in the app.",
+        "source": "rules"
+      },
+      {
+        "code": "urgency_pressure",
+        "severity": "warn",
+        "message": "Uses a short deadline to rush you.",
+        "source": "rules"
+      }
+    ],
+    "deal_id": null,
+    "junk_action": "report"
+  },
+  {
+    "id": "E-15",
+    "received_at": "2026-11-12 09:45",
+    "sender": "collabs@fitnest.in",
+    "subject": "Campaign brief attached",
+    "category": "needs_more_info",
+    "category_reason": "wants to work together but does not give deliverables or budget",
+    "rules_category": "needs_more_info",
+    "llm_category": null,
+    "source": "rules",
+    "extraction": {
+      "brand": "FitNest",
+      "agency": null,
+      "contact_name": null,
+      "contact_email": "collabs@fitnest.in",
+      "language": "english",
+      "deliverables": [],
+      "fee_amount": null,
+      "fee_currency": null,
+      "fee_currency_assumed": false,
+      "fee_inr": null,
+      "payment_type": null,
+      "product_value_inr": null,
+      "window_start": null,
+      "deadline": null,
+      "deadline_text": null,
+      "usage": {
+        "stated": false,
+        "months": null,
+        "perpetual": false,
+        "whitelisting": false,
+        "all_media": false
+      },
+      "product_category": null,
+      "mentions_attachment": true,
+      "notes": []
+    },
+    "flags": [
+      {
+        "code": "attachment_not_visible",
+        "severity": "info",
+        "message": "The email mentions an attachment. This tool reads only the message text, so open the original email and read it before replying.",
+        "source": "rules"
+      }
+    ],
+    "deal_id": "D-09",
+    "junk_action": null
+  }
+]

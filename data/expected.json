@@ -1,0 +1,54 @@
+{
+  "_notes": [
+    "Hand-written before the first run of the system.",
+    "Per-email fields describe what that single email says, not the merged deal.",
+    "`also_acceptable` lists categories I would not call wrong; the strict score ignores it, the lenient score allows it.",
+    "Fees are normalised to INR at 1 USD = 84 INR."
+  ],
+  "emails": {
+    "E-01": {"category": "deal_offer", "brand": "Dew Lab", "fee_inr": 120000, "payment_type": "cash",
+             "deadline": "2026-11-25", "deliverables": {"instagram_reel": 2, "instagram_story": 3},
+             "usage_months": 3, "usage_perpetual": false},
+    "E-02": {"category": "deal_offer", "brand": "Dew Lab", "fee_inr": 100000, "payment_type": "cash"},
+    "E-03": {"category": "scam_or_phishing"},
+    "E-04": {"category": "not_a_fit", "brand": "Pixelon", "fee_inr": 100800, "payment_type": "cash",
+             "deadline": "2026-12-10", "deliverables": {"youtube_integration": 1}},
+    "E-05": {"category": "not_a_fit", "brand": "LuckyPlay11", "fee_inr": 300000, "payment_type": "cash"},
+    "E-06": {"category": "deal_offer", "also_acceptable": ["needs_more_info"], "brand": "Chai & Co",
+             "fee_inr": 25000, "payment_type": "cash", "deliverables": {"instagram_reel": 1}},
+    "E-07": {"category": "scam_or_phishing"},
+    "E-08": {"category": "needs_more_info", "brand": "Urban Thread"},
+    "E-09": {"category": "deal_offer", "brand": "BrewBox", "payment_type": "gifting",
+             "deliverables": {"instagram_reel": 1, "instagram_story": 2}},
+    "E-10": {"category": "deal_offer", "brand": "AuralBuds", "fee_inr": 67200, "payment_type": "cash",
+             "deadline": "2026-11-30", "deliverables": {"instagram_reel": 1}, "usage_perpetual": true},
+    "E-11": {"category": "deal_offer", "brand": "Dew Lab", "fee_inr": 100000, "payment_type": "cash",
+             "deadline": "2026-11-25", "deliverables": {"instagram_reel": 2, "instagram_story": 3},
+             "usage_months": 3},
+    "E-12": {"category": "deal_offer", "also_acceptable": ["needs_more_info"], "brand": "SnapMeal",
+             "fee_inr": 45000, "payment_type": "cash", "deadline": "2026-11-01",
+             "deliverables": {"instagram_reel": 1}},
+    "E-13": {"category": "spam"},
+    "E-14": {"category": "scam_or_phishing"},
+    "E-15": {"category": "needs_more_info", "brand": "FitNest"}
+  },
+  "deals": [
+    {"emails": ["E-01", "E-02", "E-11"], "brand": "Dew Lab", "fee_inr": 100000, "action": "negotiate",
+     "must_flag": ["below_rate", "terms_worsened"], "must_not_flag": ["usage_rights", "impossible_deadline"]},
+    {"emails": ["E-04"], "brand": "Pixelon", "action": "decline", "must_flag": ["exclusivity_conflict"]},
+    {"emails": ["E-05"], "brand": "LuckyPlay11", "action": "decline", "must_flag": ["content_rule_violation"]},
+    {"emails": ["E-06"], "brand": "Chai & Co", "action": "negotiate", "must_flag": ["below_rate"]},
+    {"emails": ["E-08"], "brand": "Urban Thread", "action": "ask_for_details"},
+    {"emails": ["E-09"], "brand": "BrewBox", "action": "negotiate", "must_flag": ["gifting_low_value"]},
+    {"emails": ["E-10"], "brand": "AuralBuds", "action": "negotiate", "must_flag": ["usage_rights"],
+     "must_not_flag": ["below_rate"]},
+    {"emails": ["E-12"], "brand": "SnapMeal", "action": "ask_for_details", "must_flag": ["impossible_deadline"]},
+    {"emails": ["E-15"], "brand": "FitNest", "action": "ask_for_details", "must_flag": ["attachment_not_visible"]}
+  ],
+  "junk": {
+    "E-03": {"action": "report", "must_flag": ["pay_to_join", "urgency_pressure"]},
+    "E-07": {"action": "report", "must_flag": ["injection_attempt", "personal_data_request"]},
+    "E-13": {"action": "ignore"},
+    "E-14": {"action": "report", "must_flag": ["impersonation", "phishing_link", "urgency_pressure"]}
+  }
+}

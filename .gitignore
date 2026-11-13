@@ -1,0 +1,13 @@
+.env
+.cache/
+out/
+out_holdout/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+*.egg-info/
+.DS_Store
+Thumbs.db

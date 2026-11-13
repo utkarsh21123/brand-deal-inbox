@@ -1,0 +1,591 @@
+[
+  {
+    "id": "D-01",
+    "brand": "Dew Lab",
+    "agency": "Brightside Agency",
+    "emails": [
+      "E-01",
+      "E-02",
+      "E-11"
+    ],
+    "category": "deal_offer",
+    "terms": {
+      "deliverables": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "count": 2,
+          "rate_key": "instagram_reel"
+        },
+        {
+          "platform": "instagram",
+          "type": "story",
+          "count": 3,
+          "rate_key": "instagram_story"
+        }
+      ],
+      "fee_amount": 100000.0,
+      "fee_currency": "INR",
+      "fee_currency_assumed": false,
+      "fee_inr": 100000.0,
+      "payment_type": "cash",
+      "product_value_inr": null,
+      "window_start": "2026-11-15",
+      "deadline": "2026-11-25",
+      "deadline_text": null,
+      "usage": {
+        "stated": true,
+        "months": 3,
+        "perpetual": false,
+        "whitelisting": false,
+        "all_media": false
+      },
+      "product_category": "skincare",
+      "language": "english"
+    },
+    "history": [
+      {
+        "field": "fee",
+        "from_inr": 120000.0,
+        "to_inr": 100000.0,
+        "email": "E-02",
+        "date": "2026-11-06"
+      }
+    ],
+    "flags": [
+      {
+        "code": "below_rate",
+        "severity": "warn",
+        "message": "Offer of ₹1,00,000 is 9% below your rate card for this work (₹1,10,000: 2 x ₹40,000 + 3 x ₹10,000).",
+        "source": "rules",
+        "data": {
+          "offered": 100000.0,
+          "rate_card": 110000
+        }
+      },
+      {
+        "code": "terms_worsened",
+        "severity": "warn",
+        "message": "The brand cut its offer from ₹1,20,000 to ₹1,00,000 (-17%) in its follow-up of 6 Nov.",
+        "source": "rules",
+        "data": {
+          "original": 120000.0,
+          "latest": 100000.0
+        }
+      },
+      {
+        "code": "short_notice",
+        "severity": "warn",
+        "message": "The first slot opens in 3 days (15 Nov), window closes 25 Nov.",
+        "source": "rules"
+      },
+      {
+        "code": "payment_terms_unstated",
+        "severity": "info",
+        "message": "Payment timing and method are not stated.",
+        "source": "rules"
+      },
+      {
+        "code": "agency_unverified",
+        "severity": "info",
+        "message": "Brightside Agency says it manages this for Dew Lab but wrote from its own domain. Confirm with Dew Lab directly before sending tax or bank details.",
+        "source": "rules"
+      }
+    ],
+    "market": {
+      "market_value_inr": 110000,
+      "breakdown": "2 x ₹40,000 + 3 x ₹10,000",
+      "partial": false,
+      "offered_inr": 100000.0,
+      "delta_pct": -9.1
+    },
+    "action": "negotiate",
+    "action_reason": "Worth doing, but the fee is under your rate card.",
+    "draft": "Hi Arjun,\n\nThanks for reaching out about Dew Lab.\n\nI noticed the budget moved from ₹1,20,000 to ₹1,00,000. My rate for 2 Instagram reels + 3 Instagram stories is ₹1,10,000, so the current offer of ₹1,00,000 is below what I can do. I'd need ₹1,10,000 to go ahead.\n\nCould you confirm payment terms (when and how I would be paid)?\n\nBest,\nRiya",
+    "contact_name": "Arjun",
+    "contact_email": "talent@brightside-agency.com",
+    "first_received": "2026-11-03 10:12",
+    "last_received": "2026-11-09 11:10"
+  },
+  {
+    "id": "D-02",
+    "brand": "Pixelon",
+    "agency": null,
+    "emails": [
+      "E-04"
+    ],
+    "category": "not_a_fit",
+    "terms": {
+      "deliverables": [
+        {
+          "platform": "youtube",
+          "type": "integration",
+          "count": 1,
+          "rate_key": "youtube_integration"
+        }
+      ],
+      "fee_amount": 1200.0,
+      "fee_currency": "USD",
+      "fee_currency_assumed": false,
+      "fee_inr": 100800.0,
+      "payment_type": "cash",
+      "product_value_inr": null,
+      "window_start": null,
+      "deadline": "2026-12-10",
+      "deadline_text": null,
+      "usage": {
+        "stated": false
+      },
+      "product_category": "smartphones",
+      "language": "english"
+    },
+    "history": [],
+    "flags": [
+      {
+        "code": "exclusivity_conflict",
+        "severity": "critical",
+        "message": "Conflicts with your smartphones exclusivity with Nova Phones until 31 Jan 2027. This offer's deadline is 10 Dec.",
+        "source": "rules",
+        "data": {
+          "category": "smartphones",
+          "until": "2027-01-31"
+        }
+      }
+    ],
+    "market": {
+      "market_value_inr": 60000,
+      "breakdown": "1 x ₹60,000",
+      "partial": false,
+      "offered_inr": 100800.0,
+      "delta_pct": 68.0
+    },
+    "action": "decline",
+    "action_reason": "It conflicts with your rules or an existing deal.",
+    "draft": "Hi,\n\nThanks for thinking of me for Pixelon. I'm under an exclusivity commitment in the smartphones category until 31 Jan 2027, so I can't take this on right now.\n\nIf the timing works after that date, I'd be happy to talk again.\n\nBest,\nRiya",
+    "contact_name": null,
+    "contact_email": "creators@pixelon.com",
+    "first_received": "2026-11-05 11:30",
+    "last_received": "2026-11-05 11:30"
+  },
+  {
+    "id": "D-03",
+    "brand": "LuckyPlay11",
+    "agency": null,
+    "emails": [
+      "E-05"
+    ],
+    "category": "not_a_fit",
+    "terms": {
+      "deliverables": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "count": 2,
+          "rate_key": "instagram_reel"
+        },
+        {
+          "platform": "youtube",
+          "type": "shoutout",
+          "count": 1,
+          "rate_key": null
+        }
+      ],
+      "fee_amount": 300000.0,
+      "fee_currency": "INR",
+      "fee_currency_assumed": false,
+      "fee_inr": 300000.0,
+      "payment_type": "cash",
+      "product_value_inr": null,
+      "window_start": null,
+      "deadline": null,
+      "deadline_text": null,
+      "usage": {
+        "stated": false
+      },
+      "product_category": null,
+      "language": "english"
+    },
+    "history": [],
+    "flags": [
+      {
+        "code": "content_rule_violation",
+        "severity": "critical",
+        "message": "Breaks your content rule: \"No gambling, betting or fantasy-sports apps.\"",
+        "source": "rules"
+      }
+    ],
+    "market": {
+      "market_value_inr": null,
+      "breakdown": "2 x ₹40,000",
+      "partial": true,
+      "offered_inr": 300000.0,
+      "delta_pct": null
+    },
+    "action": "decline",
+    "action_reason": "It conflicts with your rules or an existing deal.",
+    "draft": "Hi,\n\nThanks for reaching out about LuckyPlay11. This isn't a category I work with, so I'll have to pass.\n\nWishing you a great campaign.\nRiya",
+    "contact_name": null,
+    "contact_email": "growth@luckyplay11.app",
+    "first_received": "2026-11-05 13:15",
+    "last_received": "2026-11-05 13:15"
+  },
+  {
+    "id": "D-04",
+    "brand": "Chai & Co",
+    "agency": null,
+    "emails": [
+      "E-06"
+    ],
+    "category": "deal_offer",
+    "terms": {
+      "deliverables": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "count": 1,
+          "rate_key": "instagram_reel"
+        }
+      ],
+      "fee_amount": 25000.0,
+      "fee_currency": "INR",
+      "fee_currency_assumed": true,
+      "fee_inr": 25000.0,
+      "payment_type": "cash",
+      "product_value_inr": null,
+      "window_start": null,
+      "deadline": null,
+      "deadline_text": null,
+      "usage": {
+        "stated": false
+      },
+      "product_category": "food & beverage",
+      "language": "hinglish"
+    },
+    "history": [],
+    "flags": [
+      {
+        "code": "below_rate",
+        "severity": "high",
+        "message": "Offer of ₹25,000 is 38% below your rate card for this work (₹40,000: 1 x ₹40,000).",
+        "source": "rules",
+        "data": {
+          "offered": 25000.0,
+          "rate_card": 40000
+        }
+      },
+      {
+        "code": "freemail_sender",
+        "severity": "info",
+        "message": "Written from a free email address, not a company domain. Common for small brands; check that the business exists before sharing details.",
+        "source": "rules"
+      },
+      {
+        "code": "currency_assumed",
+        "severity": "info",
+        "message": "No currency was given with the amount; assumed rupees.",
+        "source": "rules"
+      },
+      {
+        "code": "payment_terms_unstated",
+        "severity": "info",
+        "message": "Payment timing and method are not stated.",
+        "source": "rules"
+      }
+    ],
+    "market": {
+      "market_value_inr": 40000,
+      "breakdown": "1 x ₹40,000",
+      "partial": false,
+      "offered_inr": 25000.0,
+      "delta_pct": -37.5
+    },
+    "action": "negotiate",
+    "action_reason": "Worth doing, but the fee is under your rate card.",
+    "draft": "Namaste,\n\nMessage ke liye dhanyavaad! Chai & Co ke saath kaam karne mein mujhe interest hai. 1 Instagram reel ka mera rate ₹40,000 hai, aur abhi ka budget (₹25,000) us se kam hai. Kya aap ₹40,000 tak ja sakte hain?\n\nSaath hi timeline aur content usage (ads mein kitne time tak use karenge) bhi bata dijiye, aur payment kab aur kaise hoga.\n\nDhanyavaad,\nRiya",
+    "contact_name": null,
+    "contact_email": "chai.and.co@gmail.com",
+    "first_received": "2026-11-06 12:02",
+    "last_received": "2026-11-06 12:02"
+  },
+  {
+    "id": "D-05",
+    "brand": "Urban Thread",
+    "agency": null,
+    "emails": [
+      "E-08"
+    ],
+    "category": "needs_more_info",
+    "terms": {
+      "deliverables": [],
+      "fee_amount": null,
+      "fee_currency": null,
+      "fee_currency_assumed": false,
+      "fee_inr": null,
+      "payment_type": null,
+      "product_value_inr": null,
+      "window_start": null,
+      "deadline": null,
+      "deadline_text": null,
+      "usage": {
+        "stated": false
+      },
+      "product_category": "fashion",
+      "language": "english"
+    },
+    "history": [],
+    "flags": [],
+    "market": {
+      "market_value_inr": null,
+      "breakdown": "",
+      "partial": false,
+      "offered_inr": null,
+      "delta_pct": null
+    },
+    "action": "ask_for_details",
+    "action_reason": "Not enough information to judge the deal yet.",
+    "draft": "Hi,\n\nThanks for reaching out about Urban Thread.\n\nCould you confirm:\n- what you would like me to create (formats, number of posts, platform)\n- your budget for this\n- the timeline and any posting dates\n- whether you need usage rights (for example paid ads) and for how long\n\nBest,\nRiya",
+    "contact_name": null,
+    "contact_email": "hello@urbanthread.in",
+    "first_received": "2026-11-07 15:20",
+    "last_received": "2026-11-07 15:20"
+  },
+  {
+    "id": "D-06",
+    "brand": "BrewBox",
+    "agency": null,
+    "emails": [
+      "E-09"
+    ],
+    "category": "deal_offer",
+    "terms": {
+      "deliverables": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "count": 1,
+          "rate_key": "instagram_reel"
+        },
+        {
+          "platform": "instagram",
+          "type": "story",
+          "count": 2,
+          "rate_key": "instagram_story"
+        }
+      ],
+      "fee_amount": null,
+      "fee_currency": null,
+      "fee_currency_assumed": false,
+      "fee_inr": null,
+      "payment_type": "gifting",
+      "product_value_inr": 3500.0,
+      "window_start": null,
+      "deadline": null,
+      "deadline_text": "within 2 weeks of delivery",
+      "usage": {
+        "stated": false
+      },
+      "product_category": "food & beverage",
+      "language": "english"
+    },
+    "history": [],
+    "flags": [
+      {
+        "code": "gifting_low_value",
+        "severity": "high",
+        "message": "Only product (₹3,500) for work your rate card puts at ₹60,000; the product covers 6% of it.",
+        "source": "rules"
+      }
+    ],
+    "market": {
+      "market_value_inr": 60000,
+      "breakdown": "1 x ₹40,000 + 2 x ₹10,000",
+      "partial": false,
+      "offered_inr": null,
+      "delta_pct": null
+    },
+    "action": "negotiate",
+    "action_reason": "Worth doing, but a product alone is far below your rates.",
+    "draft": "Hi,\n\nThanks for reaching out about BrewBox.\n\nI do paid collaborations, and a product alone doesn't cover 1 Instagram reel + 2 Instagram stories. Is there a budget for this? If so, send it over and I'll tell you what I can do.\n\nCould you confirm:\n- whether you need usage rights (for example paid ads) and for how long\n- payment terms (when and how I would be paid)\n\nBest,\nRiya",
+    "contact_name": null,
+    "contact_email": "pr@brewbox.co",
+    "first_received": "2026-11-08 10:00",
+    "last_received": "2026-11-08 10:00"
+  },
+  {
+    "id": "D-07",
+    "brand": "AuralBuds",
+    "agency": null,
+    "emails": [
+      "E-10"
+    ],
+    "category": "deal_offer",
+    "terms": {
+      "deliverables": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "count": 1,
+          "rate_key": "instagram_reel"
+        }
+      ],
+      "fee_amount": 800.0,
+      "fee_currency": "USD",
+      "fee_currency_assumed": false,
+      "fee_inr": 67200.0,
+      "payment_type": "cash",
+      "product_value_inr": null,
+      "window_start": null,
+      "deadline": "2026-11-30",
+      "deadline_text": null,
+      "usage": {
+        "stated": true,
+        "months": null,
+        "perpetual": true,
+        "whitelisting": true,
+        "all_media": true
+      },
+      "product_category": "audio",
+      "language": "english"
+    },
+    "history": [],
+    "flags": [
+      {
+        "code": "usage_rights",
+        "severity": "high",
+        "message": "Asks for perpetual usage and whitelisting (ads run from your handle). Your policy includes 3 months of paid-ad usage; longer or perpetual rights must be priced separately, and none of that is in this fee.",
+        "source": "rules"
+      },
+      {
+        "code": "payment_terms_unstated",
+        "severity": "info",
+        "message": "Payment timing and method are not stated.",
+        "source": "rules"
+      }
+    ],
+    "market": {
+      "market_value_inr": 40000,
+      "breakdown": "1 x ₹40,000",
+      "partial": false,
+      "offered_inr": 67200.0,
+      "delta_pct": 68.0
+    },
+    "action": "negotiate",
+    "action_reason": "Worth doing, but the usage rights go beyond your policy.",
+    "draft": "Hi,\n\nThanks for reaching out about AuralBuds.\n\nOn usage: my fee includes up to 3 months of paid-ad usage. Perpetual usage and whitelisting are not included and are priced separately. Could you tell me how long and on which channels you need them? I'll send a quote.\n\nCould you confirm payment terms (when and how I would be paid)?\n\nBest,\nRiya",
+    "contact_name": null,
+    "contact_email": "influence@auralbuds.com",
+    "first_received": "2026-11-08 18:25",
+    "last_received": "2026-11-08 18:25"
+  },
+  {
+    "id": "D-08",
+    "brand": "SnapMeal",
+    "agency": null,
+    "emails": [
+      "E-12"
+    ],
+    "category": "deal_offer",
+    "terms": {
+      "deliverables": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "count": 1,
+          "rate_key": "instagram_reel"
+        }
+      ],
+      "fee_amount": 45000.0,
+      "fee_currency": "INR",
+      "fee_currency_assumed": false,
+      "fee_inr": 45000.0,
+      "payment_type": "cash",
+      "product_value_inr": null,
+      "window_start": null,
+      "deadline": "2026-11-01",
+      "deadline_text": null,
+      "usage": {
+        "stated": false
+      },
+      "product_category": "food & beverage",
+      "language": "english"
+    },
+    "history": [],
+    "flags": [
+      {
+        "code": "impossible_deadline",
+        "severity": "high",
+        "message": "The deadline (1 Nov) passed 11 days ago. It is either a mistake or a leftover from an old brief.",
+        "source": "rules"
+      },
+      {
+        "code": "payment_terms_unstated",
+        "severity": "info",
+        "message": "Payment timing and method are not stated.",
+        "source": "rules"
+      }
+    ],
+    "market": {
+      "market_value_inr": 40000,
+      "breakdown": "1 x ₹40,000",
+      "partial": false,
+      "offered_inr": 45000.0,
+      "delta_pct": 12.5
+    },
+    "action": "ask_for_details",
+    "action_reason": "The deadline has already passed; confirm what they actually need.",
+    "draft": "Hi,\n\nThanks for reaching out about SnapMeal. The ₹45,000 budget is noted.\n\nThe brief says the content should be live by 1 Nov, which has already passed. Could you confirm the date you actually need?\n\nCould you confirm whether you need usage rights (for example paid ads) and for how long?\n\nBest,\nRiya",
+    "contact_name": null,
+    "contact_email": "marketing@snapmeal.in",
+    "first_received": "2026-11-10 09:30",
+    "last_received": "2026-11-10 09:30"
+  },
+  {
+    "id": "D-09",
+    "brand": "FitNest",
+    "agency": null,
+    "emails": [
+      "E-15"
+    ],
+    "category": "needs_more_info",
+    "terms": {
+      "deliverables": [],
+      "fee_amount": null,
+      "fee_currency": null,
+      "fee_currency_assumed": false,
+      "fee_inr": null,
+      "payment_type": null,
+      "product_value_inr": null,
+      "window_start": null,
+      "deadline": null,
+      "deadline_text": null,
+      "usage": {
+        "stated": false
+      },
+      "product_category": null,
+      "language": "english"
+    },
+    "history": [],
+    "flags": [
+      {
+        "code": "attachment_not_visible",
+        "severity": "info",
+        "message": "The email mentions an attachment. This tool reads only the message text, so open the original email and read it before replying.",
+        "source": "rules"
+      }
+    ],
+    "market": {
+      "market_value_inr": null,
+      "breakdown": "",
+      "partial": false,
+      "offered_inr": null,
+      "delta_pct": null
+    },
+    "action": "ask_for_details",
+    "action_reason": "Not enough information to judge the deal yet.",
+    "draft": "Hi,\n\nThanks for reaching out about FitNest.\n\nCould you confirm:\n- what you would like me to create (formats, number of posts, platform)\n- your budget for this\n- the timeline and any posting dates\n- whether you need usage rights (for example paid ads) and for how long\n\nBest,\nRiya",
+    "contact_name": null,
+    "contact_email": "collabs@fitnest.in",
+    "first_received": "2026-11-12 09:45",
+    "last_received": "2026-11-12 09:45"
+  }
+]

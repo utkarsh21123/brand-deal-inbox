@@ -1,0 +1,25 @@
+{
+  "_notes": ["Written before running the system on this set. Held out: the rules were not tuned on it.",
+             "Only categories and a few fields are scored here."],
+  "emails": {
+    "H-01": {"category": "deal_offer", "brand": "GlowUp Beauty", "fee_inr": 150000, "deadline": "2026-12-20", "usage_months": 6},
+    "H-02": {"category": "not_a_fit"},
+    "H-03": {"category": "scam_or_phishing"},
+    "H-04": {"category": "not_a_fit"},
+    "H-05": {"category": "deal_offer", "fee_inr": 50400, "deadline": "2027-02-20"},
+    "H-06": {"category": "spam"},
+    "H-07": {"category": "deal_offer", "fee_inr": 30000},
+    "H-08": {"category": "needs_more_info"},
+    "H-09": {"category": "deal_offer", "brand": "Kiwi Sports", "fee_inr": 50000, "usage_perpetual": true},
+    "H-10": {"category": "deal_offer", "brand": "Kiwi Sports", "fee_inr": 55000, "usage_months": 6},
+    "H-11": {"category": "scam_or_phishing"},
+    "H-12": {"category": "scam_or_phishing"},
+    "H-13": {"category": "deal_offer", "brand": "Raj Ice Cream", "fee_inr": 60000},
+    "H-14": {"category": "deal_offer", "brand": "UrbanNest", "fee_inr": 75000, "deadline": "2026-12-03"},
+    "H-15": {"category": "deal_offer", "brand": "Zest Drinks", "fee_inr": 85000, "deadline": "2026-12-12", "usage_months": 3}
+  },
+  "deals": [
+    {"emails": ["H-09", "H-10"], "brand": "Kiwi Sports", "fee_inr": 55000, "action": "negotiate"}
+  ],
+  "junk": {}
+}

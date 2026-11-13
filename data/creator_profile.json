@@ -1,0 +1,32 @@
+{
+  "name": "Riya Menon",
+  "email": "riya.creates@example.com",
+  "niche": "tech and lifestyle",
+  "languages": ["English", "Hindi"],
+  "platforms": {
+    "instagram": { "handle": "@riya.creates", "followers": 85000 },
+    "youtube": { "channel": "Riya Creates", "subscribers": 41000 }
+  },
+  "base_rates_inr": {
+    "instagram_reel": 40000,
+    "instagram_story": 10000,
+    "youtube_integration": 60000,
+    "youtube_dedicated_video": 150000
+  },
+  "currency_note": "Accepts INR and USD. Use 1 USD = 84 INR for comparisons.",
+  "current_exclusivity": [
+    {
+      "brand": "Nova Phones",
+      "category": "smartphones",
+      "until": "2027-01-31",
+      "terms": "No content for competing smartphone brands until the end date."
+    }
+  ],
+  "content_rules": [
+    "No gambling, betting or fantasy-sports apps.",
+    "No crypto or trading-tip promotions.",
+    "Never pays to join programmes or campaigns."
+  ],
+  "usage_rights_policy": "Up to 3 months of paid-ad usage is included in the rate. Longer or perpetual usage must be priced separately.",
+  "today": "2026-11-12"
+}
