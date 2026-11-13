@@ -52,7 +52,7 @@ def deal_flags(terms, history, market, profile, today, category):
                           f"Offer of {fmt.money(terms['fee_amount'], cur)} is {abs(delta):.0f}% below your rate card "
                           f"for this work ({fmt.inr(market['market_value_inr'])}: {market['breakdown']}{note}).",
                           offered=fee, rate_card=market["market_value_inr"]))
-    elif delta is not None and delta > 0:
+    elif delta is not None and delta > 0 and not market.get("partial") and category != "not_a_fit":
         flags.append(flag("above_rate", "info",
                           f"Offer is {delta:.0f}% above your rate card ({fmt.inr(market['market_value_inr'])}).",
                           offered=fee, rate_card=market["market_value_inr"], delta_pct=delta))
