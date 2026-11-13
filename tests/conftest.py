@@ -8,9 +8,9 @@ DATA = Path(__file__).resolve().parent.parent / "data"
 
 @pytest.fixture(scope="session")
 def profile():
-    return json.loads((DATA / "creator_profile.json").read_text())
+    return json.loads((DATA / "creator_profile.json").read_text(encoding="utf-8"))
 
 
 @pytest.fixture(scope="session")
 def inbox():
-    return {e["id"]: e for e in json.loads((DATA / "inbox.json").read_text())}
+    return {e["id"]: e for e in json.loads((DATA / "inbox.json").read_text(encoding="utf-8"))}

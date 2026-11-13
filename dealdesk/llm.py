@@ -41,7 +41,7 @@ def load_env(path=".env"):
     p = Path(path)
     if not p.exists():
         return
-    for line in p.read_text().splitlines():
+    for line in p.read_text(encoding="utf-8").splitlines():
         line = line.strip()
         if line and not line.startswith("#") and "=" in line:
             k, v = line.split("=", 1)
@@ -83,7 +83,7 @@ class Client:
         cached = self.cache_dir / f"{key}.json" if self.cache_dir else None
         if cached and cached.exists():
             self.cache_hits += 1
-            return json.loads(cached.read_text())
+            return json.loads(cached.read_text(encoding="utf-8"))
 
         payload = {"model": self.model, "temperature": 0,
                    "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
@@ -96,7 +96,7 @@ class Client:
                 out = parse_json(data["choices"][0]["message"]["content"])
                 if cached:
                     cached.parent.mkdir(parents=True, exist_ok=True)
-                    cached.write_text(json.dumps(out))
+                    cached.write_text(json.dumps(out), encoding="utf-8")
                 return out
             except urllib.error.HTTPError as e:
                 last = e
