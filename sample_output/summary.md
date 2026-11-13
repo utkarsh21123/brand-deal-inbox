@@ -20,9 +20,9 @@
 1 email (E-12). The deadline has already passed; confirm what they actually need.
 
 - **Offer:** 1 Instagram reel; ₹45,000; by 1 Nov
-- **Your rate card for this:** ₹40,000
+- **Your rate card for this:** ₹40,000 (offer is 12% above your rate)
 - **High:** The deadline (1 Nov) passed 11 days ago. It is either a mistake or a leftover from an old brief.
-- Also: Payment timing and method are not stated.
+- Also: Offer is 12% above your rate card (₹40,000). Payment timing and method are not stated.
 - Draft reply: see D-08 in `drafts.md`
 
 ## Reply this week
@@ -54,9 +54,9 @@
 1 email (E-10). Worth doing, but the usage rights go beyond your policy.
 
 - **Offer:** 1 Instagram reel; $800 (about ₹67,200); by 30 Nov; usage: perpetual, whitelisting, all media
-- **Your rate card for this:** ₹40,000
+- **Your rate card for this:** ₹40,000 (offer is 68% above your rate)
 - **High:** Asks for perpetual usage and whitelisting (ads run from your handle). Your policy includes 3 months of paid-ad usage; longer or perpetual rights must be priced separately, and none of that is in this fee.
-- Also: Payment timing and method are not stated.
+- Also: Offer is 68% above your rate card (₹40,000). Payment timing and method are not stated.
 - Draft reply: see D-07 in `drafts.md`
 
 ### FitNest: Ask for details

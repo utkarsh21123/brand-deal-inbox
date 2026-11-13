@@ -96,6 +96,7 @@
       "market_value_inr": 110000,
       "breakdown": "2 x ₹40,000 + 3 x ₹10,000",
       "partial": false,
+      "unlisted": [],
       "offered_inr": 100000.0,
       "delta_pct": -9.1
     },
@@ -156,6 +157,7 @@
       "market_value_inr": 60000,
       "breakdown": "1 x ₹60,000",
       "partial": false,
+      "unlisted": [],
       "offered_inr": 100800.0,
       "delta_pct": 68.0
     },
@@ -212,14 +214,28 @@
         "severity": "critical",
         "message": "Breaks your content rule: \"No gambling, betting or fantasy-sports apps.\"",
         "source": "rules"
+      },
+      {
+        "code": "partial_rate_card",
+        "severity": "info",
+        "message": "Your rate card does not list rates for 1 x youtube shoutout. Market value (₹80,000) reflects known deliverables only.",
+        "source": "rules",
+        "data": {
+          "unlisted": [
+            "1 x youtube shoutout"
+          ]
+        }
       }
     ],
     "market": {
-      "market_value_inr": null,
+      "market_value_inr": 80000,
       "breakdown": "2 x ₹40,000",
       "partial": true,
+      "unlisted": [
+        "1 x youtube shoutout"
+      ],
       "offered_inr": 300000.0,
-      "delta_pct": null
+      "delta_pct": 275.0
     },
     "action": "decline",
     "action_reason": "It conflicts with your rules or an existing deal.",
@@ -296,6 +312,7 @@
       "market_value_inr": 40000,
       "breakdown": "1 x ₹40,000",
       "partial": false,
+      "unlisted": [],
       "offered_inr": 25000.0,
       "delta_pct": -37.5
     },
@@ -338,6 +355,7 @@
       "market_value_inr": null,
       "breakdown": "",
       "partial": false,
+      "unlisted": [],
       "offered_inr": null,
       "delta_pct": null
     },
@@ -400,6 +418,7 @@
       "market_value_inr": 60000,
       "breakdown": "1 x ₹40,000 + 2 x ₹10,000",
       "partial": false,
+      "unlisted": [],
       "offered_inr": null,
       "delta_pct": null
     },
@@ -456,6 +475,17 @@
         "source": "rules"
       },
       {
+        "code": "above_rate",
+        "severity": "info",
+        "message": "Offer is 68% above your rate card (₹40,000).",
+        "source": "rules",
+        "data": {
+          "offered": 67200.0,
+          "rate_card": 40000,
+          "delta_pct": 68.0
+        }
+      },
+      {
         "code": "payment_terms_unstated",
         "severity": "info",
         "message": "Payment timing and method are not stated.",
@@ -466,6 +496,7 @@
       "market_value_inr": 40000,
       "breakdown": "1 x ₹40,000",
       "partial": false,
+      "unlisted": [],
       "offered_inr": 67200.0,
       "delta_pct": 68.0
     },
@@ -518,6 +549,17 @@
         "source": "rules"
       },
       {
+        "code": "above_rate",
+        "severity": "info",
+        "message": "Offer is 12% above your rate card (₹40,000).",
+        "source": "rules",
+        "data": {
+          "offered": 45000.0,
+          "rate_card": 40000,
+          "delta_pct": 12.5
+        }
+      },
+      {
         "code": "payment_terms_unstated",
         "severity": "info",
         "message": "Payment timing and method are not stated.",
@@ -528,6 +570,7 @@
       "market_value_inr": 40000,
       "breakdown": "1 x ₹40,000",
       "partial": false,
+      "unlisted": [],
       "offered_inr": 45000.0,
       "delta_pct": 12.5
     },
@@ -577,6 +620,7 @@
       "market_value_inr": null,
       "breakdown": "",
       "partial": false,
+      "unlisted": [],
       "offered_inr": null,
       "delta_pct": null
     },
