@@ -31,6 +31,12 @@ def _run(args):
     return results, deals, profile, data, client, time.time() - start
 
 
+def _warn_fallback(results):
+    failed = sum(1 for r in results if r.source == "rules (llm failed)")
+    if failed:
+        print(f"WARNING: {failed} of {len(results)} emails used rules because the model failed.", file=sys.stderr)
+
+
 def cmd_run(args):
     results, deals, profile, _, client, secs = _run(args)
     out = Path(args.out)
@@ -41,6 +47,7 @@ def cmd_run(args):
     (out / "summary.md").write_text(text, encoding="utf-8")
     (out / "drafts.md").write_text(report.drafts_file(deals), encoding="utf-8")
     print(text)
+    _warn_fallback(results)
     how = f"{client.provider}/{client.model}, {client.calls} calls, {client.cache_hits} cached" if client else "rules only"
     print(f"[{len(results)} emails, {len(deals)} deals, {secs:.1f}s, {how}] wrote {out}/", file=sys.stderr)
 
@@ -53,6 +60,7 @@ def cmd_eval(args):
     Path(args.out).mkdir(parents=True, exist_ok=True)
     (Path(args.out) / "eval.md").write_text(text, encoding="utf-8")
     print(text)
+    _warn_fallback(results)
 
 
 def main(argv=None):
