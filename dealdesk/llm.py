@@ -25,7 +25,7 @@ from .models import CATEGORIES, Extraction, Usage
 
 PROVIDERS = {
     "groq": ("https://api.groq.com/openai/v1", "llama-3.3-70b-versatile"),
-    "gemini": ("https://generativelanguage.googleapis.com/v1beta/openai", "gemini-2.5-flash"),
+    "gemini": ("https://generativelanguage.googleapis.com/v1beta/openai", "gemini-3.5-flash"),
     "openrouter": ("https://openrouter.ai/api/v1", "meta-llama/llama-3.3-70b-instruct:free"),
     "ollama": ("http://localhost:11434/v1", "llama3.1:8b"),
 }
