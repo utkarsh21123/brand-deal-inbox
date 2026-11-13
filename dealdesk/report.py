@@ -58,7 +58,14 @@ def _deal_block(d):
         parts.append("usage: " + _usage_line(t["usage"]))
     out += [f"- **Offer:** " + ("; ".join(parts) if parts else "no deliverables, fee or dates given")]
     if d.market["market_value_inr"]:
-        out += [f"- **Your rate card for this:** {fmt.inr(d.market['market_value_inr'])}"]
+        if d.action == "decline" and d.market.get("partial"):
+            pass
+        else:
+            delta_str = ""
+            if d.market.get("delta_pct") is not None and d.market["delta_pct"] > 0:
+                delta_str = f" (offer is {d.market['delta_pct']:.0f}% above your rate)"
+            card_label = "Your rate card for known deliverables" if d.market.get("partial") else "Your rate card for this"
+            out += [f"- **{card_label}:** {fmt.inr(d.market['market_value_inr'])}{delta_str}"]
     for h in d.history:
         if h["field"] == "fee":
             out += [f"- **Changed:** fee went from {fmt.inr(h['from_inr'])} to {fmt.inr(h['to_inr'])} on {fmt.day(h['date'])}"]

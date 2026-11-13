@@ -6,6 +6,11 @@ from datetime import date
 from . import fmt
 from .models import flag
 
+BELOW_RATE_WARN_PCT = 5
+BELOW_RATE_HIGH_PCT = 25
+SHORT_NOTICE_DAYS = 7
+LOW_GIFTING_COVERAGE = 0.25
+
 
 def market_value(terms, profile):
     """What the creator's rate card says this work is worth, in INR."""
@@ -40,13 +45,17 @@ def deal_flags(terms, history, market, profile, today, category):
     fee, cur = terms.get("fee_inr"), terms.get("fee_currency")
 
     delta = market["delta_pct"]
-    if delta is not None and delta <= -5:
-        sev = "high" if delta <= -25 else "warn"
+    if delta is not None and delta <= -BELOW_RATE_WARN_PCT:
+        sev = "high" if delta <= -BELOW_RATE_HIGH_PCT else "warn"
         note = " (excludes unlisted deliverables)" if market.get("partial") else ""
         flags.append(flag("below_rate", sev,
                           f"Offer of {fmt.money(terms['fee_amount'], cur)} is {abs(delta):.0f}% below your rate card "
                           f"for this work ({fmt.inr(market['market_value_inr'])}: {market['breakdown']}{note}).",
                           offered=fee, rate_card=market["market_value_inr"]))
+    elif delta is not None and delta > 0:
+        flags.append(flag("above_rate", "info",
+                          f"Offer is {delta:.0f}% above your rate card ({fmt.inr(market['market_value_inr'])}).",
+                          offered=fee, rate_card=market["market_value_inr"], delta_pct=delta))
 
     if market.get("partial") and market.get("unlisted"):
         unlisted_text = ", ".join(market["unlisted"])
@@ -80,7 +89,7 @@ def deal_flags(terms, history, market, profile, today, category):
 
     if terms.get("payment_type") == "gifting" and terms.get("product_value_inr") and market["market_value_inr"]:
         ratio = terms["product_value_inr"] / market["market_value_inr"]
-        if ratio < 0.25:
+        if ratio < LOW_GIFTING_COVERAGE:
             flags.append(flag("gifting_low_value", "high",
                               f"Only product ({fmt.inr(terms['product_value_inr'])}) for work your rate card puts at "
                               f"{fmt.inr(market['market_value_inr'])}; the product covers {ratio:.0%} of it."))
@@ -94,7 +103,7 @@ def deal_flags(terms, history, market, profile, today, category):
                           "It is either a mistake or a leftover from an old brief."))
     elif first:
         n = (date.fromisoformat(first) - today).days
-        if n <= 7:
+        if n <= SHORT_NOTICE_DAYS:
             when = "opens" if terms.get("window_start") else "is due"
             flags.append(flag("short_notice", "warn",
                               f"The first slot {when} in {max(n, 0)} day{'s' * (n != 1)} ({fmt.day(first)})"

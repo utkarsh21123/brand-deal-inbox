@@ -194,6 +194,42 @@ def test_future_campaign_after_exclusivity_window_zenphone(profile):
     assert clashes == []
 
 
+# ---------------------------------------------------------------- Risk constants & Above rate / Partial decline
+
+def test_risk_constants_defined():
+    assert risk.BELOW_RATE_WARN_PCT == 5
+    assert risk.BELOW_RATE_HIGH_PCT == 25
+    assert risk.SHORT_NOTICE_DAYS == 7
+    assert risk.LOW_GIFTING_COVERAGE == 0.25
+
+
+def test_auralbuds_shows_above_rate_percentage(profile, inbox):
+    from dealdesk import pipeline, report
+    results, deals = pipeline.run([inbox["E-10"]], profile)
+    d = deals[0]
+    assert d.market["delta_pct"] == 68.0
+    codes = {f["code"] for f in d.flags}
+    assert "above_rate" in codes
+    assert "usage_rights" in codes
+    block = report._deal_block(d)
+    assert "offer is 68% above your rate" in block
+    assert "usage: perpetual, whitelisting, all media" in block
+
+
+def test_declined_partial_deal_rate_card_not_misleading(profile, inbox):
+    from dealdesk import pipeline, report
+    results, deals = pipeline.run([inbox["E-05"]], profile)
+    d = deals[0]
+    assert d.action == "decline"
+    assert d.market["partial"] is True
+    # The decline draft should not present the partial rate (₹80,000) as a valid quote
+    assert "80,000" not in d.draft
+    assert "rate card" not in d.draft.lower()
+    # In deal block, rate card line is suppressed for declined partial deals
+    block = report._deal_block(d)
+    assert "Your rate card for this" not in block
+
+
 # ---------------------------------------------------------------- Fix #5: Semantic multi-amount extraction
 
 def test_extract_single_amount(profile):
