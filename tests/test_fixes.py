@@ -124,6 +124,8 @@ def test_broadened_prompt_injection_variants(hostile_text):
     "Please provide confidential information regarding the upcoming campaign under NDA.",
     "Follow the instructions in the attached PDF brief.",
     "Our system prompt delivery ensures packages arrive on time.",
+    "Please follow the new instructions in the attached brief.",
+    "Please do not ignore the rules of our giveaway.",
 ])
 def test_clean_business_language_does_not_trigger_injection(clean_text):
     sig = signals.detect({"from": "brand@legit.com", "subject": "Campaign", "body": clean_text})

@@ -172,7 +172,7 @@ The design constraints and architecture were driven by the task requirements:
 Key issues identified and corrected across development sessions:
 - E-02 misclassification: follow-up emails without repeated deliverables now inherit thread context.
 - Brand matching: added support for possessive brand names like "SnapMeal's".
-- False positives in prompt-injection and fee detectors: narrowed injection patterns to require genuine attack context (preventing false alerts on business phrases like "assistant brand manager" or "mark as urgent"), and refined pay-to-join patterns so normal brand fee commitments ("we will pay your fee") are not flagged.
+- False positives in prompt-injection and fee detectors: narrowed injection patterns to require explicit qualifiers (e.g. "previous/system instructions", "system prompt", "follow new instructions instead") and AI targets rather than isolated words, preventing false alerts on business phrases (such as "assistant brand manager", "mark as urgent", "follow the new instructions in the attached brief", or "do not ignore the rules of our giveaway"), and refined pay-to-join patterns so normal brand fee commitments ("we will pay your fee") are not flagged.
 - Model failure visibility: added explicit CLI warnings when model calls fail and fall back to rules.
 
 ## Layout
@@ -196,6 +196,7 @@ sample_output/  committed rules-only run and both eval reports
 
 ## Known limits
 
+- Prompt-injection heuristics: pattern matching checks for explicit hostile qualifiers (`previous/prior instructions`, `system prompt`, override directives, and AI target roles). While patterns have been narrowed to permit standard brief language ("follow the new instructions in the attached brief", "do not ignore the rules of our giveaway"), regex heuristics cannot replace semantic parsing for arbitrary unseen phrasing.
 - Content rules and exclusivity categories are matched by keyword. Unknown categories fall back to a literal match on the category name.
 - Payment terms are never parsed, so every deal gets an info flag saying they are not stated.
 - Currency is INR or USD only.
